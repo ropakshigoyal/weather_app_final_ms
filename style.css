@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    background: hsla(296, 100%, 6%, 1);
+    background: linear-gradient(135deg, rgb(0, 15, 31) 72%, rgb(6, 35, 116) 100%);
+    overflow: hidden;
+    font-family: "poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-container{
+    position: absolute;
+    width: 90%;
+    max-width: 470px;
+    /* background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("images/weather.jpg"); */
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    padding: 40px 35px;
+    text-align: center;
+}
+
+.search-box{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-box input{
+    height: 60px;
+    flex: 1;
+    font-size: 18px;
+    padding: 10px 25px;
+    border-radius: 25px;
+    color: #555;
+    background-color: #ebfffc;
+    border: none;
+    margin-right: 16px;
+    display: flex;
+    justify-content: center;
+}
+.search-box input:focus{
+    outline: none;
+}
+
+#search{
+    background-color: #ebfffc;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+#search img{
+    width: 20px;
+}
+
+#search:hover{
+    background-color: #e6ebea;
+}
+
+.error{
+    text-align: left;
+    margin-left: 14px;
+    margin-top: 10px;
+    display: none;
+}
+
+
+.weather-icon{
+    width: 170px;
+    margin-top: 30px;
+}
+
+#condition{
+    font-size: 17px;
+    font-weight: 600;
+}
+
+#temp{
+    font-size: 80px;
+    font-weight: 500;
+}
+#city{
+    font-size: 45px;
+    font-weight: 400;
+    margin-top: -10px;
+}
+
+
+.details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    margin-top: 50px;
+}
+
+.col{
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.col img{
+    width: 40px;
+    margin-right: 10px;
+    margin-top: 0;
+}
+
+.humidity, .wind{
+    font-size: 28px;
+    margin-top: -6px;
+}
+
+
+
+@media screen and (max-width:1000px) {
+    
+}
+
+@media screen and (max-width:550px) {
+    .app-container{
+        top: 50px;
+        left: 20px;
+        right: 50px;
+        width: 90vw;
+        max-width: 470px;
+        height: 85vh;
+        margin: 0;
+    }
+    .details{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+    .search-box input{
+        height: 50px;
+        width: 30%;
+    }
+    #search{
+        width: 50px;
+        height: 50px;
+    }
+    #search img{
+        width: 15px;
+    }
+    .col img{
+        width: 30px;
+    }
+    .humidity, .wind{
+        font-size: 15px;
+    }
+    .col div:last-child{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-height: 730px) {
+    .app-container{
+        top: 7vh;
+        height: 84vh;
+        bottom: 20px;
+    }
+    .search-box input{
+        height: 40px;
+        width: 30%;
+    }
+    #search{
+        width: 40px;
+        height: 40px;
+    }
+    #search img{
+        width: 12px;
+    }
+    #temp{
+        font-size: 8vh;
+    }
+    #city{
+        font-size: 25px;
+    }
+    .details{
+        margin-top: 3vh;
+    }
+    .col div:last-child{
+        font-size: 1.5vh;
+    }
+}
+
+
+
+
+
+/* CSS for Preloader */
+
+/**************/
+#preloader{
+    background-color: #212121;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.loader {
+    position: relative;
+    width: 120px;
+    height: 90px;
+    margin: 0 auto;
+  }
+  
+  .loader:before {
+    content: "";
+    position: absolute;
+    bottom: 30px;
+    left: 50px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: #2a9d8f;
+    animation: loading-bounce 0.5s ease-in-out infinite alternate;
+  }
+  
+  .loader:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 7px;
+    width: 45px;
+    border-radius: 4px;
+    box-shadow: 0 5px 0 #f2f2f2, -35px 50px 0 #f2f2f2, -70px 95px 0 #f2f2f2;
+    animation: loading-step 1s ease-in-out infinite;
+  }
+  
+  @keyframes loading-bounce {
+    0% {
+      transform: scale(1, 0.7);
+    }
+  
+    40% {
+      transform: scale(0.8, 1.2);
+    }
+  
+    60% {
+      transform: scale(1, 1);
+    }
+  
+    100% {
+      bottom: 140px;
+    }
+  }
+  
+  @keyframes loading-step {
+    0% {
+      box-shadow: 0 10px 0 rgba(0, 0, 0, 0),
+              0 10px 0 #f2f2f2,
+              -35px 50px 0 #f2f2f2,
+              -70px 90px 0 #f2f2f2;
+    }
+  
+    100% {
+      box-shadow: 0 10px 0 #f2f2f2,
+              -35px 50px 0 #f2f2f2,
+              -70px 90px 0 #f2f2f2,
+              -70px 90px 0 rgba(0, 0, 0, 0);
+    }
+  }
